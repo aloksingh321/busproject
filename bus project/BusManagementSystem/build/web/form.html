@@ -1,0 +1,237 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+<style>
+body{
+	
+   /*background-color:#FBE8A6;*/
+   background-color:white;
+	overflow: hidden;
+	font-size:13px;
+	
+}
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  background-color:white;
+  background-image: url("");
+  background-repeat: no-repeat;
+  padding:1px;
+  height:50%;
+  width:73%;
+}
+
+#bus{
+	color:white;
+	font-size:35px;
+}
+.header{
+  display:flex; 
+  background-color:black; 	
+  padding:19px 24px;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+#head {
+	color:black;
+	text-shadow:0px 0px 10px black;
+	position:absolute;
+	top:13%;
+	left:36.5%;
+	font-size:51px;
+}
+.main{
+	
+	height:390px;
+	width:340px;
+	background-color:#116466;
+      padding-left:20px;
+      border:solid #31708E 1px;
+}
+.demo{
+	position:absolute;
+	width:320px;
+	top:20%;
+	left:39%;
+	animation-name:ani;
+	animation-duration:2s;
+animation-fill-mode:forwards; 
+}
+.color{
+	display:flex;
+	background-color:lightgrey;
+	padding:280px;
+
+}
+.test{
+	position:relative;
+	padding-right:14px;
+	padding-left:0px;
+	top:12px;
+}
+.test1{
+	position:relative;
+	padding-right:0px;
+	padding-left:0px;
+	top:-57px;
+
+}
+.btn{
+	color:white;
+	background-color:#376E6F;
+	border:none;
+	display: block;
+	cursor:pointer;
+	padding:14px 21px;
+	width:100px;
+}
+.btn:hover
+{
+  transition-duration:0.5s;
+  transorm:translate(0px,-5px);
+  box-shadow :0px 0px 10px black;
+  background-color:#EAE7DC;	
+}
+input[type=text] {
+  width: 91%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding-left:20px; 
+}
+.effect{
+	text-shadow:0px 0px 1px white;
+  padding:0px;
+}
+.effect h1{
+	color:white;
+text-align:center;
+  font-size:35px;
+}
+#abc{
+	text-shadow:0px 0px 10px white;
+	color:white;
+}
+.footer{
+    display:flex;
+    background-color:black;
+    justify-content:center;
+    padding:9px 24px;
+    flex-direction: row;
+    flex-wrap:wrap;
+ }
+ .footer i{
+ 	margin:20px;
+
+ }
+@Keyframes ani{
+	0%{
+		
+		left:-300px;
+	
+	}
+	100%{
+		
+	left:550px;
+
+	}
+
+</style>
+</head>
+<body>
+
+
+
+<div class="header">
+<i class="fa fa-bus" id="bus"></i> 
+<span style="color:white; padding:1px 32px; font-size:25px"> Bus-Management</span>
+ </div>
+<div class="demo" >
+<div class="main"> 
+    <form name="myForm" action="logServlet"  >
+     <div  class="effect">
+    <h1> Login Form </h1>
+      </div>
+      <div>
+    <sapn id="abc">Name</span> <input  type="text" placeholder="UserName" name="name" required>   
+      </div>
+      <br>
+
+      <div>     
+   <sapn id="abc">Password</span> <input  type="text" placeholder="password" pass="password" required>
+     </div>
+    
+ <div id="abc">
+    <h6>Register yourself as:- </h6>
+   <input type="radio"  id="x1" name="a" value="Staff"> Staff 
+  <input type="radio"  id="x2" name="a" value="Student"> Student
+ </div>
+
+
+  <div class="test"> 
+<button class="btn" style="float:left"><span style="color:black">Sign</span> </button>
+</div>
+   
+</form>
+</div>
+<div class="test1">
+<button class="btn" style="float:right" id="rdio"><span style="color:black">Register</span></button>
+</div>
+</div>
+
+<div  id="particles-js"> </div>  
+
+<div class="footer">
+<a href="https://www.youtube.com"><i class="fa fa-youtube-square" style="font-size:24px;color:white;"></i></a>
+<a href="#"><i class="fa fa-facebook-square" style="font-size:24px;color:white"></i></a>
+<a href="#"><i class="fa fa-github-square" style="font-size:24px;color:white"></i></a>
+<a href="#"><i class="fa fa-instagram" style="font-size:24px;color:white"></i></a>
+</div>
+
+
+
+ <div id="check"> </div>
+
+</div>
+<script>
+
+var x ,y;
+var x = document.getElementById("check");
+function my()
+{
+if (document.getElementById("x1").checked)
+  y = document.getElementById("x1").value;
+
+else if(document.getElementById("x2").checked)
+  y = document.getElementById("x2").value;
+
+else if (document.getElementById("x3").checked)
+  y = document.getElementById("x3").value;
+else
+  y = "kuch nhi;"
+
+  if(y=='Student')
+{
+window.location.href = "register.html";	
+}
+else if(y=='Staff')
+{
+	window.location.href = "register.html";
+}
+}
+
+var z = document.getElementById('rdio');
+z.addEventListener("click", my);
+</script>
+
+<script src="Particles.js"> </script>
+<script src="App.js"></script>
+</body>
+</html>
